@@ -37,7 +37,7 @@ int main() {
         for(int i = 0; i < n; i++) {
             dp[i][j] = min(min(i>0?dp[i-1][j]:BB, i<n-1?dp[i+1][j]:BB) + a[i][j], dp[i][j]);
         } // I don't know how many times I should do, but to eliminate the side-effects, I need to do so
-    }
+    }// actually, left first, top then, down then, compare top and down
     int ans = BB;
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
